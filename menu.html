@@ -80,11 +80,11 @@
 </head>
 <body>
     <h1>Gustos Frescos</h1>
-    <H2>Menu</H2>
+    <h2>Menu</h2>
     <div class="menu">
         <button onclick="mostrarSeccion('helado')">Helado</button>
         <button onclick="mostrarSeccion('paletas')">Paletas de Hielo</button>
-        <button onclick="mostrarSeccion('Bebidas')">Bebidas</button>
+        <button onclick="mostrarSeccion('bebidas')">Bebidas</button>
         <button onclick="mostrarSeccion('papas')">Papas</button>
         <button onclick="mostrarSeccion('botanas')">Botanas</button>
     </div>
@@ -109,26 +109,29 @@
                     { nombre: "Chocolate"},
                     { nombre: "Vainilla "},
                     { nombre: "Galleta"},
-                    { nombre: "Nuez"}
+                    { nombre: "Nuez"},
+                    { imagen: "https://papelitho.com.mx/cdn/shop/files/istockphoto-680201382-170667a_1_1200x1200.jpg?v=1699891903"}
                 ] },
                 paletas: { descripcion: "Refrescantes paletas de hielo en una gran variedad de sabores.", 
                 productos: [
-                { nombre: "Tamarindo"},
-                { nombre: "Jamaica"},
-                { nombre: "Mango "},
-                { nombre: "Limon"},
-                { nombre: "Piña"}
-            ] },          
-                Bebidas: { descripcion: "Bebidas refrescantes y burbujeantes en una variedad de sabores para acompañar cualquier antojo. ¡Disfruta su frescura en cada sorbo!", 
+                    { nombre: "Tamarindo"},
+                    { nombre: "Jamaica"},
+                    { nombre: "Piña "},
+                    { nombre: "Mango "},
+                    { nombre: "Limon"},
+                    { imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ28p0szpJvsCf4aVLrd0bgeIZCvXPLrzmhZQ&s"},
+                    { imagen: "https://i.ytimg.com/vi/6Zi9TMTgCbk/maxresdefault.jpg"}
+                ] },          
+                bebidas: { descripcion: "Bebidas refrescantes y burbujeantes en una variedad de sabores para acompañar cualquier antojo. ¡Disfruta su frescura en cada sorbo!", 
                 productos: [
-                { nombre: "Mirinda", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750103134660L.jpg" },
-                { nombre: "Coca-Cola", imagen: "https://supermode.com.mx/cdn/shop/products/100001337_4be2fa42-a15d-4539-a584-385823b5cfce.jpg?v=1698797211" },
-                { nombre: "7up", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQrum63mgfC2g77HcXURZAkN5B9txxIKJwA&s" },
-                { nombre: "Manzanita sol", imagen: "https://pizzapop.com.mx/cdn/shop/products/image_959f3fa1-f97a-407e-9fa3-897b316d933d.jpg?v=1681095739" },
-                { nombre: "Frutsi", imagen: "https://i5.walmartimages.com.mx/samsmx/images/product-images/img_large/000005333-3l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" },
-                { nombre: "Boing", imagen: "https://shoplatinfoods.ca/cdn/shop/products/boing-mini-27-piezas_300x300.jpg?v=1678994199"},
-                { nombre: "Agua Natural", imagen: "https://http2.mlstatic.com/D_NQ_NP_748203-MLU77964449967_072024-O.webp" },
-                    ] },
+                    { nombre: "Mirinda", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750103134660L.jpg" },
+                    { nombre: "Coca-Cola", imagen: "https://supermode.com.mx/cdn/shop/products/100001337_4be2fa42-a15d-4539-a584-385823b5cfce.jpg?v=1698797211" },
+                    { nombre: "7up", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQrum63mgfC2g77HcXURZAkN5B9txxIKJwA&s" },
+                    { nombre: "Manzanita sol", imagen: "https://pizzapop.com.mx/cdn/shop/products/image_959f3fa1-f97a-407e-9fa3-897b316d933d.jpg?v=1681095739" },
+                    { nombre: "Frutsi", imagen: "https://i5.walmartimages.com.mx/samsmx/images/product-images/img_large/000005333-3l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" },
+                    { nombre: "Boing", imagen: "https://shoplatinfoods.ca/cdn/shop/products/boing-mini-27-piezas_300x300.jpg?v=1678994199"},
+                    { nombre: "Agua Natural", imagen: "https://http2.mlstatic.com/D_NQ_NP_748203-MLU77964449967_072024-O.webp" },
+                ] },
                 papas: { 
                     descripcion: "Crujientes papas fritas con diferentes salsas y condimentos.", 
                     productos: [
@@ -137,7 +140,7 @@
                         { nombre: "Doritos Nacho", imagen: "https://m.media-amazon.com/images/I/71HnPB90QjL.jpg" },
                         { nombre: "Rancheritos", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101116775L1.jpg" },
                         { nombre: "Fritos", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101113112L.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" },
-                        { nombre: " Cheetos flamin hot", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101113093L.jpg" },
+                        { nombre: "Cheetos flamin hot", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101113093L.jpg" },
                         { nombre: "Chetos", imagen: "https://http2.mlstatic.com/D_NQ_NP_988195-MLU77022706039_062024-O.webp"},
                         { nombre: "Churrumais", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750047800255L.jpg" },
                         { nombre: "Chips", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750301854470L1.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" },
@@ -147,7 +150,7 @@
                 botanas: { 
                     descripcion: "Variedad de botanas para disfrutar en cualquier ocasión.", 
                     productos: [
-                    { nombre: "Plativolos", imagen: "https://labodeguitamayoreo.com/wp-content/uploads/2023/04/IEPGAL126.jpg" },
+                        { nombre: "Plativolos", imagen: "https://labodeguitamayoreo.com/wp-content/uploads/2023/04/IEPGAL126.jpg" },
                         { nombre: "Principe", imagen: "https://marinela-com-mx-assets.s3.amazonaws.com/s3fs-public/images/2023-10/carrusel-principe-chocolate-105-grs.png?VersionId=xnPJQDaglTPngdI9tsJ4C8z6e4mERPKC" },
                         { nombre: "Triki-Trakes", imagen: "https://marinela-com-mx-assets.s3.amazonaws.com/s3fs-public/images/2023-10/carrusel-trikitrakes-85-grs.png?VersionId=IxQRhIDGIw4D9M9CbvixiHBRZ1HgMusB" },
                         { nombre: "Emperador", imagen: "https://www.gamesacookies.com/sites/gamesa.com/files/2021-11/emperador-v2.png" },
@@ -168,9 +171,9 @@
                 const div = document.createElement('div');
                 div.classList.add('producto');
         
-                // Solo agrega imagen si existe, si no, solo muestra el nombre
+                // Siempre agrega la imagen, si existe, y el nombre
                 if (producto.imagen) {
-                    div.innerHTML = `<strong>${producto.nombre}</strong><br><img src="${producto.imagen}" alt="${producto.nombre}">`;
+                    div.innerHTML = `<strong>${producto.nombre || ''}</strong><br><img src="${producto.imagen}" alt="${producto.nombre || 'Producto'}">`;
                 } else {
                     div.innerHTML = `<strong>${producto.nombre}</strong>`; // Solo texto sin imagen
                 }
@@ -181,5 +184,6 @@
             contenido.style.display = 'block';
         }
     </script>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d933.4445013223626!2d-100.46194924077956!3d20.63790356186354!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2smx!4v1740357269350!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></body>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d466.7229691852963!2d-100.4613826402032!3d20.637669358911737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3508b58d60517%3A0xe9d23e9e227b1e7b!2sCerro%20de%20la%20Media%20Luna%20102_30%2C%20Santa%20Ana%2C%20Ex%20Hacienda%20Santana%2C%2076116%20Santiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses-419!2smx!4v1740359234514!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</body>
 </html>
