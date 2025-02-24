@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Interactivo</title>
+    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,12 +24,26 @@
             border: none;
             border-radius: 10px;
             cursor: pointer;
-            background-color: #ff9800;
             color: white;
             transition: 0.3s;
         }
+        .menu button:nth-child(1) { /* Helado */
+            background-color: #ff9800; /* Naranja */
+        }
+        .menu button:nth-child(2) { /* Paletas de Hielo */
+            background-color: #0033cc; /* Azul Rey */
+        }
+        .menu button:nth-child(3) { /* Bebidas */
+            background-color: #8B0000; /* Rojo/Vino */
+        }
+        .menu button:nth-child(4) { /* Papas */
+            background-color: #008000; /* Verde Bandera */
+        }
+        .menu button:nth-child(5) { /* Botanas */
+            background-color: #800080; /* Morado Uva */
+        }
         .menu button:hover {
-            background-color: #e68900;
+            opacity: 0.8; /* Cambia la opacidad al pasar el mouse */
         }
         .contenido {
             display: none;
@@ -68,7 +83,7 @@
     <div class="menu">
         <button onclick="mostrarSeccion('helado')">Helado</button>
         <button onclick="mostrarSeccion('paletas')">Paletas de Hielo</button>
-        <button onclick="mostrarSeccion('nieves')">Nieves</button>
+        <button onclick="mostrarSeccion('Bebidas')">Bebidas</button>
         <button onclick="mostrarSeccion('papas')">Papas</button>
         <button onclick="mostrarSeccion('botanas')">Botanas</button>
     </div>
@@ -87,14 +102,31 @@
             const productosDiv = document.getElementById('productos');
             
             const data = {
-                helado: { descripcion: "Deliciosos helados de diferentes sabores y presentaciones.", productos: [] },
-                paletas: { descripcion: "Refrescantes paletas de hielo en una gran variedad de sabores.", productos: [] },
-                nieves: { 
-                    descripcion: "Tradicionales nieves con ingredientes naturales.", productos: [
-                         { nombre: "Sabritas Clásicas", imagen: "https://lagranbodega.vteximg.com.br/arquivos/ids/297205-1000-1000/7501011167438.jpg?v=638418217795430000" },
-                         { nombre: "Sabritas Clásicas", imagen: "https://lagranbodega.vteximg.com.br/arquivos/ids/297205-1000-1000/7501011167438.jpg?v=638418217795430000" },
-                         { nombre: "Sabritas Clásicas", imagen: "https://lagranbodega.vteximg.com.br/arquivos/ids/297205-1000-1000/7501011167438.jpg?v=638418217795430000" },
-                         { nombre: "Sabritas Clásicas", imagen: "https://lagranbodega.vteximg.com.br/arquivos/ids/297205-1000-1000/7501011167438.jpg?v=638418217795430000" },
+                helado: { descripcion: "Deliciosos helados de diferentes sabores y presentaciones.", 
+                productos: [
+                    { nombre: "Napolitano"},
+                    { nombre: "Chocolate"},
+                    { nombre: "Vainilla "},
+                    { nombre: "Galleta"},
+                    { nombre: "Nuez"}
+                ] },
+                paletas: { descripcion: "Refrescantes paletas de hielo en una gran variedad de sabores.", 
+                productos: [
+                { nombre: "Tamarindo"},
+                { nombre: "Jamaica"},
+                { nombre: "Mango "},
+                { nombre: "Limon"},
+                { nombre: "Piña"}
+            ] },          
+                Bebidas: { descripcion: "Bebidas refrescantes y burbujeantes en una variedad de sabores para acompañar cualquier antojo. ¡Disfruta su frescura en cada sorbo!", 
+                productos: [
+                { nombre: "Mirinda", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750103134660L.jpg" },
+                { nombre: "Coca-Cola", imagen: "https://supermode.com.mx/cdn/shop/products/100001337_4be2fa42-a15d-4539-a584-385823b5cfce.jpg?v=1698797211" },
+                { nombre: "7up", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmQrum63mgfC2g77HcXURZAkN5B9txxIKJwA&s" },
+                { nombre: "Manzanita sol", imagen: "https://pizzapop.com.mx/cdn/shop/products/image_959f3fa1-f97a-407e-9fa3-897b316d933d.jpg?v=1681095739" },
+                { nombre: "Frutsi", imagen: "https://i5.walmartimages.com.mx/samsmx/images/product-images/img_large/000005333-3l.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" },
+                { nombre: "Boing", imagen: "https://shoplatinfoods.ca/cdn/shop/products/boing-mini-27-piezas_300x300.jpg?v=1678994199"},
+                { nombre: "Agua Natural", imagen: "https://http2.mlstatic.com/D_NQ_NP_748203-MLU77964449967_072024-O.webp" },
                     ] },
                 papas: { 
                     descripcion: "Crujientes papas fritas con diferentes salsas y condimentos.", 
@@ -114,32 +146,40 @@
                 botanas: { 
                     descripcion: "Variedad de botanas para disfrutar en cualquier ocasión.", 
                     productos: [
-                    { nombre: "Sabritas Clásicas", imagen: "https://lagranbodega.vteximg.com.br/arquivos/ids/297205-1000-1000/7501011167438.jpg?v=638418217795430000" },
-                        { nombre: "Ruffles Queso", imagen: "https://cdn.shopify.com/s/files/1/0566/4391/1854/files/7501011167674_270923_48adaeea-cb0c-46ca-8496-92f9bd0e8289.webp?v=1696001745" },
-                        { nombre: "Doritos Nacho", imagen: "https://m.media-amazon.com/images/I/71HnPB90QjL.jpg" },
-                        { nombre: "Rancheritos", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101116775L1.jpg" },
-                        { nombre: "Fritos", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101113112L.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" },
-                        { nombre: " Cheetos flamin hot", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750101113093L.jpg" },
-                        { nombre: "Chetos", imagen: "https://http2.mlstatic.com/D_NQ_NP_988195-MLU77022706039_062024-O.webp"},
-                        { nombre: "Churrumais", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750047800255L.jpg" },
-                        { nombre: "Chips", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750301854470L1.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF" },
-                        { nombre: "Tostitos", imagen: "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750047803740L.jpg" },
+                    { nombre: "Plativolos", imagen: "https://labodeguitamayoreo.com/wp-content/uploads/2023/04/IEPGAL126.jpg" },
+                        { nombre: "Principe", imagen: "https://marinela-com-mx-assets.s3.amazonaws.com/s3fs-public/images/2023-10/carrusel-principe-chocolate-105-grs.png?VersionId=xnPJQDaglTPngdI9tsJ4C8z6e4mERPKC" },
+                        { nombre: "Triki-Trakes", imagen: "https://marinela-com-mx-assets.s3.amazonaws.com/s3fs-public/images/2023-10/carrusel-trikitrakes-85-grs.png?VersionId=IxQRhIDGIw4D9M9CbvixiHBRZ1HgMusB" },
+                        { nombre: "Emperador", imagen: "https://www.gamesacookies.com/sites/gamesa.com/files/2021-11/emperador-v2.png" },
+                        { nombre: "Chokis", imagen: "https://http2.mlstatic.com/D_NQ_NP_923992-MLU73662396477_122023-O.webp" },
+                        { nombre: "Cacahuates", imagen: "https://static.wixstatic.com/media/f3ac49_ec601e7429cf4c6793c5f0432d85e507~mv2.png/v1/fit/w_500,h_500,q_90/file.png"},
+                        { nombre: "Gomitas/panditas", imagen: "https://i5.walmartimages.com.mx/samsmx/images/product-images/img_large/980005631-2l.jpg" },
+                        { nombre: "Dulces", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQAFd6JNHGbDNoJp2CVkP19uuuWw-wonXqrA&s" },
+                        { nombre: "Chicharrones", imagen: "https://www.yoinfluyo.com/wp-content/uploads/2023/02/papas.jpeg" },
+                        { nombre: "Chocolates", imagen: "https://http2.mlstatic.com/D_NQ_NP_700857-MLU72072216164_102023-O.webp" },
                     ] }
             };
             
             titulo.innerText = seccion.charAt(0).toUpperCase() + seccion.slice(1);
             descripcion.innerText = data[seccion].descripcion;
-            
+        
             productosDiv.innerHTML = "";
             data[seccion].productos.forEach(producto => {
                 const div = document.createElement('div');
                 div.classList.add('producto');
-                div.innerHTML = `<strong>${producto.nombre}</strong><br><img src="${producto.imagen}" alt="${producto.nombre}">`;
+        
+                // Solo agrega imagen si existe, si no, solo muestra el nombre
+                if (producto.imagen) {
+                    div.innerHTML = `<strong>${producto.nombre}</strong><br><img src="${producto.imagen}" alt="${producto.nombre}">`;
+                } else {
+                    div.innerHTML = `<strong>${producto.nombre}</strong>`; // Solo texto sin imagen
+                }
+        
                 productosDiv.appendChild(div);
             });
-            
+        
             contenido.style.display = 'block';
         }
     </script>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14935.175959661763!2d-100.46993315219883!3d20.637252281918474!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3508b58195965%3A0x4cf1671f413ed62c!2sCerro%20de%20la%20Media%20Luna%2C%20Santa%20Ana%2C%20Ex%20Hacienda%20Santana%2C%2076116%20Santiago%20de%20Quer%C3%A9taro%2C%20Qro.!5e0!3m2!1ses-419!2smx!4v1740356548721!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </body>
 </html>
